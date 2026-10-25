@@ -1,10 +1,15 @@
 {
   "name": "nc-visualizer",
   "displayName": "NC Visualizer",
-  "description": "",
-  "version": "0.0.1",
+  "description": "A 3D viewer extension for NC and G-code files.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matyatyan/nc-visualizer.git"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
   "engines": {
-    "vscode": "^1.140.0"
+    "vscode": "^1.107.0"
   },
   "categories": [
     "Other"
@@ -14,10 +19,19 @@
   "contributes": {
     "commands": [
       {
-        "command": "nc-visualizer.helloWorld",
-        "title": "Hello World"
+        "command": "nc-visualizer.openViewer",
+        "title": "ビュワー起動"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "nc-visualizer.openViewer",
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -28,7 +42,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.140.0",
+    "@types/vscode": "1.107.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
     "typescript-eslint": "^8.61.1",

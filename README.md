@@ -1,71 +1,36 @@
-# nc-visualizer README
+# NC Visualizer
 
-This is the README for your extension "nc-visualizer". After writing up a brief description, we recommend including the following sections.
+Visual Studio Code内でNCコード（Gコード）の軌跡を3D表示するための拡張機能です。
+A 3D visualization extension for NC / G-code files directly inside Visual Studio Code.
 
-## Features
+## Features (主な機能)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **3D Toolpath Preview (3Dツールパスプレビュー)**: 
+  Three.jsを使用して、Gコード（G0/G1/G2/G3）の座標から3D空間上に加工軌跡を描画します。
+- **Context Menu Integration (右クリック)**: 
+  エディタで任意のNCコードを範囲選択し、右クリックメニューから起動できます。
+- **Side-by-Side View (並べて表示)**: 
+  エディタ画面のすぐ隣（右側パネル）に3Dビュワーが立ち上がるため、コードと軌跡を同時に確認しながら作業できます。
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage (使い方)
 
-\!\[feature X\]\(images/feature-x.png\)
+1. エディタで軌跡を描画したいNCコードを**範囲選択**します。
+2. 右クリックしてコンテキストメニューを開き、**「ビュワー起動」** を選択します。
+3. 右側のパネルに3Dビュワーが開き、ツールパスの軌跡が表示されます。
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Requirements (動作環境)
 
-## Requirements
+- Visual Studio Code (^1.107.0以降)
+- 特に外部ツールのインストールは不要です。
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Known Issues (既定の制限・既知の問題)
 
-## Extension Settings
+- 円弧補間はXY平面のみ対応しています。
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
+## Release Notes (リリースノート)
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Initial release of NC Visualizer.
+- Added 3D toolpath visualization feature via Webview and Three.js.
+- Added editor context menu integration for selected text.
